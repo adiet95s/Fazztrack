@@ -1,0 +1,16 @@
+{
+  "name": "week-02",
+  "version": "1.0.0",
+  "main": "promise-01.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "keywords": [],
+  "description": "",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "bcrypt": "^5.0.1"
+  }
+}
