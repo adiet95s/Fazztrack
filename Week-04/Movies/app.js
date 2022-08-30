@@ -1,10 +1,11 @@
+require('dotenv').config()
 const express = require('express')
 var cors = require('cors')
 const server = express()
 const main = require('./src/main')
 const db = require("./src/config/db")
 const errorHandler = require('./src/middleware/errorHandler')
-const PORT = 8080
+const PORT = process.env.PORT || 8080
 
 async function init(){
 	try{

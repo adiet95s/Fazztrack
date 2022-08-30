@@ -15,10 +15,10 @@ model.GetAll = (data) => {
 
 model.Save = (data) => {
    return new Promise((resolve, reject) => {
-      db.query(`INSERT INTO public.booking (schedule_id, "seat", "tanggal", total_price) VALUES($1, $2, $3, $4)`, [
+      db.query(`INSERT INTO public.booking (schedule_id, "seat", "date", total_price) VALUES($1, $2, $3, $4)`, [
          data.schedule_id,
          data.seat,
-         data.tanggal,
+         data.date,
          data.total_price,
       ])
          .then((data) => {
@@ -32,10 +32,10 @@ model.Save = (data) => {
 
 model.Update = (data) => {
    return new Promise((resolve, reject)=>{
-      db.query(`UPDATE public.booking SET schedule_id = $1, "seat" = $2, "tanggal" = $3, total_price = $4 WHERE booking_id = $5`, [
+      db.query(`UPDATE public.booking SET schedule_id = $1, "seat" = $2, "date" = $3, total_price = $4 WHERE booking_id = $5`, [
         data.schedule_id,
         data.seat,
-        data.tanggal,
+        data.date,
         data.total_price,
         data.id
       ])

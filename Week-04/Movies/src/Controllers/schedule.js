@@ -2,7 +2,7 @@ const ctrl = {}
 const model = require('../Models/schedule')
 
 
-ctrl.getSchedule = async (req, res) => {
+ctrl.getSchedule = async (req, res, next) => {
    try {
       const data = await model.GetAll()
       console.log(data);
@@ -12,7 +12,7 @@ ctrl.getSchedule = async (req, res) => {
    }
 }
 
-ctrl.AddData = async (req, res) => {
+ctrl.AddData = async (req, res, next) => {
    try {
       const { movie_id, jam, date, location, price, alamat, studio, cinema } = req.body
       const data = await model.Save({  movie_id, jam, date, location, price, alamat, studio, cinema })
@@ -22,7 +22,7 @@ ctrl.AddData = async (req, res) => {
    }
 }
 
-ctrl.updateData = async (req, res) => {
+ctrl.updateData = async (req, res, next) => {
    try {
       const id = +req.params.id
       const { movie_id, jam, date, location, price, alamat, studio, cinema } = req.body
@@ -33,7 +33,7 @@ ctrl.updateData = async (req, res) => {
    }
 }
 
-ctrl.deleteData = async (req, res) => {
+ctrl.deleteData = async (req, res, next) => {
    const id = +req.params.id
    console.log(id, 'Dari controller');
    try {

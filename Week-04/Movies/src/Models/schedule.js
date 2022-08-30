@@ -15,7 +15,7 @@ model.GetAll = (data) => {
 
 model.Save = (data) => {
    return new Promise((resolve, reject) => {
-      db.query(`INSERT INTO public.schedule (movie_id, "jam", "date", "location", price, "alamat", "studio", "cinema") VALUES($1, $2, $3, $4, $5, $6, $7, $8)`, [
+      db.query(`INSERT INTO public.schedule (movie_id, "jam", "date", "location", price, "address", "studio", "cinema") VALUES($1, $2, $3, $4, $5, $6, $7, $8)`, [
          data.movie_id,
          data.jam,
          data.date,
@@ -36,7 +36,7 @@ model.Save = (data) => {
 
 model.Update = (data) => {
    return new Promise((resolve, reject)=>{
-      db.query(`UPDATE public.schedule SET movie_id = $1, "jam" = $2, "date" = $3, "location" = $4, price = $5, "alamat" = $6, "studio" = $7, "cinema" = $8 WHERE schedule_id = $9`, [
+      db.query(`UPDATE public.schedule SET movie_id = $1, "jam" = $2, "date" = $3, "location" = $4, price = $5, "address" = $6, "studio" = $7, "cinema" = $8 WHERE schedule_id = $9`, [
         data.movie_id,
         data.jam,
         data.date,

@@ -1,15 +1,15 @@
 const express = require('express')
 const Router = express.Router()
 const ctrl = require('../Controllers/movie')
-// const paginate = require('express-paginate');
-const page = require('../middleware/pagination')
+const upload = require('../middleware/upload')
+const author = require('../middleware/author')
 
-Router.get('/', ctrl.getMovie)
-Router.post('/', ctrl.AddData)
-Router.put('/:id', ctrl.updateData)
-Router.delete('/:id', ctrl.deleteData)
+
+Router.get('/',ctrl.getMovie)
+Router.post('/', author, upload.single('images'), ctrl.AddData)
+Router.put('/:id', author, upload.single('images'), ctrl.updateData)
+Router.delete('/:id', author, ctrl.deleteData)
 Router.get('/search', ctrl.findName)
-
 Router.get('/ascName', ctrl.ascName)
 
 
